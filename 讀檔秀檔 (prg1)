@@ -1,0 +1,9 @@
+import cv2 
+cv2.__version__ 
+
+
+//讀取圖檔(放到user)
+img = cv2.imread('star1.png')
+cv2.imshow('photo1',img)
+cv2.waitKey(0)
+cv2.destoryAllWindows()
