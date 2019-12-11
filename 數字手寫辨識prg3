@@ -1,0 +1,25 @@
+# prg3
+
+#prg3 顯示訓練資料的圖片與值
+from keras.datasets import mnist
+
+#讀取MNIST資料集
+(train_feature, train_label), (test_feature, test_label) = mnist.load_data()
+
+# 查看訓練資料
+print(len(train_feature), len(train_label))   #60000 60000
+
+# 查看維度
+print(train_feature.shape, train_label.shape)   # (60000, 28, 28) (60000,)
+
+# 顯示圖片與值
+import matplotlib.pyplot as plt
+def show_image(image):
+    fig = plt.gcf()
+    fig.set_size_inches(2,2)  #數字圖片大小
+    plt.imshow(image, cmap = 'binary')  #黑白灰階顯示
+    plt.show()
+
+show_image(train_feature[0])  #顯示訓練資料第1個數字
+
+print(train_label[0])    #顯示第1個訓練資料圖片真實值
